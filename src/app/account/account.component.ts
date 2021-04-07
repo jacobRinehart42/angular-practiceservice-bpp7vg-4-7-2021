@@ -12,6 +12,7 @@ export class AccountComponent {
 
   onSetTo(status: string) {
     this.acctService.onStatusChanged(this.id, status);
+    this.acctService.statusUpdate.emit(status);
   }
 
   constructor(private acctService: AccountService) {}
